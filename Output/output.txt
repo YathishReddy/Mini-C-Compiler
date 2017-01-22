@@ -1,0 +1,142 @@
+LEXICAL ANALYSIS
+----------------
+
+#include : PREPROCESSOR DIRECTIVE at line 1
+<stdio.h> : HEADER FILE at line 1
+int : INT at line 3
+func(int a,int b) FUNCTION
+{ : OPEN_BRACE at line 4
+return : RETURN at line 5
+0 : NUMBER at line 5
+; : SEMICOLON at line 5
+} : CLOSE_BRACE at line 6
+int : INT at line 8
+main : MAIN at line 8
+( : OPEN_PAREN at line 8
+) : CLOSE_PAREN at line 8
+{ : OPEN_BRACE at line 9
+// Single Line Comment : COMMENTS at line 10
+int : INT at line 11
+var : VARIABLE NAME at line 11
+; : SEMICOLON at line 11
+for : FOR at line 12
+( : OPEN_PAREN at line 12
+var : VARIABLE NAME at line 12
+= : ASSIGNMENT at line 12
+ 10 : NUMBER at line 12
+; : SEMICOLON at line 12
+var : VARIABLE NAME at line 12
+<= : LESS_EQ at line 12
+100 : NUMBER at line 12
+; : SEMICOLON at line 12
+var : VARIABLE NAME at line 12
+++ : INCREMENT at line 12
+) : CLOSE_PAREN at line 12
+{ : OPEN_BRACE at line 13
+int : INT at line 14
+temp : VARIABLE NAME at line 14
+= : ASSIGNMENT at line 14
+ 0 : NUMBER at line 14
+; : SEMICOLON at line 14
+while : WHILE at line 15
+( : OPEN_PAREN at line 15
+temp : VARIABLE NAME at line 15
+< : LESS at line 15
+var : VARIABLE NAME at line 15
+) : CLOSE_PAREN at line 15
+{ : OPEN_BRACE at line 16
+temp : VARIABLE NAME at line 17
+++ : INCREMENT at line 17
+; : SEMICOLON at line 17
+} : CLOSE_BRACE at line 18
+START COMMENT at line 20
+END COMMENT at line 21
+do : DO at line 23
+{ : OPEN_BRACE at line 24
+temp : VARIABLE NAME at line 25
++= : ADD_ASSIGN at line 25
+10 : NUMBER at line 25
+* : MULTIPLY at line 25
+var : VARIABLE NAME at line 25
+; : SEMICOLON at line 25
+if : IF at line 26
+( : OPEN_PAREN at line 26
+temp : VARIABLE NAME at line 26
+> : GREAT at line 26
+100 : NUMBER at line 26
+) : CLOSE_PAREN at line 26
+printf : PRINT at line 27
+( : OPEN_PAREN at line 27
+"%d" : STRING
+, : COMMA at line 27
+temp : VARIABLE NAME at line 27
+) : CLOSE_PAREN at line 27
+; : SEMICOLON at line 27
+else : ELSE at line 28
+printf : PRINT at line 29
+( : OPEN_PAREN at line 29
+"%d" : STRING
+, : COMMA at line 29
+var : VARIABLE NAME at line 29
+) : CLOSE_PAREN at line 29
+; : SEMICOLON at line 29
+} : CLOSE_BRACE at line 30
+while : WHILE at line 30
+( : OPEN_PAREN at line 30
+temp : VARIABLE NAME at line 30
+< : LESS at line 30
+10000 : NUMBER at line 30
+) : CLOSE_PAREN at line 30
+; : SEMICOLON at line 30
+} : CLOSE_BRACE at line 31
+return : RETURN at line 32
+0 : NUMBER at line 32
+; : SEMICOLON at line 32
+} : CLOSE_BRACE at line 33
+
+Number of lines :  33
+
+SYMBOL TABLE
+------------
+
+NEW BLOCK
+< 0 , CONSTANT >
+< func , FUNCTION >
+
+NEW BLOCK
+< ++ , OPERATOR >
+< temp , INTEGER_VARIABLE >
+
+NEW BLOCK
+< * , OPERATOR >
+< += , OPERATOR >
+< 10 , CONSTANT >
+< 100 , CONSTANT >
+< > , OPERATOR >
+< temp , INTEGER_VARIABLE >
+< var , INTEGER_VARIABLE >
+
+NEW BLOCK
+< 0 , CONSTANT >
+< 10000 , CONSTANT >
+< < , OPERATOR >
+< = , OPERATOR >
+< int , KEYWORD >
+< temp , INTEGER_VARIABLE >
+< var , INTEGER_VARIABLE >
+
+NEW BLOCK
+< ++ , OPERATOR >
+< 0 , CONSTANT >
+< 10 , CONSTANT >
+< 100 , CONSTANT >
+< <= , OPERATOR >
+< = , OPERATOR >
+< int , KEYWORD >
+< main , MAIN_FUNCTION >
+< var , INTEGER_VARIABLE >
+
+NEW BLOCK
+< int , KEYWORD >
+
+Stack Empty!
