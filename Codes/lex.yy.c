@@ -1612,7 +1612,7 @@ printf("%s : WHILE at line %d\n",yytext,linecount);
 case 50:
 YY_RULE_SETUP
 #line 203 "scanner.l"
-printf("%s : HEADER at line %d\n",yytext,linecount);
+printf("%s : HEADER FILE at line %d\n",yytext,linecount);
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
@@ -2655,6 +2655,8 @@ void yyfree (void * ptr )
 int main(int argc, char *argv[])
 {
 	FILE* SRC;
+	printf("\nLEXICAL ANALYSIS\n");
+	printf("----------------\n\n");
 	if (argc == 2 && (SRC = fopen(argv[1],"r")))
         	yyin = SRC;
 	else if(SRC == NULL)
@@ -2669,6 +2671,9 @@ int main(int argc, char *argv[])
 	}
 	yylex();
 	printf("\nNumber of lines :  %d\n",linecount); 
+	fclose(SRC);
+	fclose(LEXOUT);
+	system("./symbol_table");
 	return 0;
 }
 	

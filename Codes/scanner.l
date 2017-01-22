@@ -200,7 +200,7 @@ VARNAME [_a-zA-Z][_a-zA-Z0-9]*
 "scanf"	printf("%s : SCAN at line %d\n",yytext,linecount);
 "while" printf("%s : WHILE at line %d\n",yytext,linecount);
 
-{HEADER} printf("%s : HEADER at line %d\n",yytext,linecount);
+{HEADER} printf("%s : HEADER FILE at line %d\n",yytext,linecount);
 
 {VARNAME}	{
 				printf("%s : VARIABLE NAME at line %d\n",yytext,linecount);
@@ -221,6 +221,8 @@ VARNAME [_a-zA-Z][_a-zA-Z0-9]*
 int main(int argc, char *argv[])
 {
 	FILE* SRC;
+	printf("\nLEXICAL ANALYSIS\n");
+	printf("----------------\n\n");
 	if (argc == 2 && (SRC = fopen(argv[1],"r")))
         	yyin = SRC;
 	else if(SRC == NULL)
@@ -235,6 +237,9 @@ int main(int argc, char *argv[])
 	}
 	yylex();
 	printf("\nNumber of lines :  %d\n",linecount); 
+	fclose(SRC);
+	fclose(LEXOUT);
+	system("./symbol_table");
 	return 0;
 }
 	
